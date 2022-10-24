@@ -1,20 +1,44 @@
-﻿// Task_1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
 #include <iostream>
+using namespace std;
+
+void ShowArray(int* arr, const int SIZE);
+void CopyArray(int* arrFrom, int* arrTo, const int SIZE);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	const int SIZE = 5;
+
+	int arrOne[SIZE]{ 0, 3, 52, 12, 54 };
+	int arrTwo[SIZE]{ 1, 53, 3, 74, 10 };
+
+	cout << "Copy Array:\n";
+
+	ShowArray(arrOne, SIZE);
+	cout << "\n";
+	ShowArray(arrTwo, SIZE);
+
+	CopyArray(arrOne, arrTwo, SIZE);
+
+	cout << "==================================\n";
+
+	ShowArray(arrOne, SIZE);
+	cout << "\n";
+	ShowArray(arrTwo, SIZE);
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
+void ShowArray(int* arr, const int SIZE)
+{
+	for (int i = 0; i < SIZE; i++)
+	{
+		cout << *(arr + i) << "\t";
+	}
+	cout << "\n";
+}
 
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
+void CopyArray(int* arrFrom, int* arrTo, const int SIZE)
+{
+	for (int i = 0; i < SIZE; i++)
+	{
+		*(arrTo + i) = *(arrFrom + i);
+	}
+}
