@@ -8,8 +8,8 @@ int main()
 {
 	const int SIZE = 5;
 
-	int arrOne[SIZE] { 0, 3, 52, 12, 54 };
-	int arrTwo[SIZE] { 1, 53, 3, 74, 10 };
+	int arrOne[SIZE]{ 0, 3, 52, 12, 54 };
+	int arrTwo[SIZE]{ 1, 53, 3, 74, 10 };
 
 	cout << "Copy Array:\n";
 
